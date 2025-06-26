@@ -10,6 +10,11 @@ const postSchema = new Schema({
   image: {
     type: String,
   },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "Author",
+  },
+  tags: [{ type: Schema.Types.ObjectId, ref: "Tag" }],
 });
 
 const Post = model("Post", postSchema);

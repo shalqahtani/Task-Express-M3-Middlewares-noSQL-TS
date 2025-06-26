@@ -9,9 +9,9 @@ import { upload } from "../../middlewares/multer.middleware";
 
 const router = express.Router();
 
-router.get("/", getPosts);
-router.post("/", upload.single("image"), createPost);
-router.put("/:id", updatePost);
-router.delete("/:id", deletePost);
+router.get("/posts", getPosts);
+router.post("/posts", upload.single("image"), createPost);
+router.put("/posts/:id", updatePost);
+router.delete("/posts/:id", deletePost);
 
 export default router;
